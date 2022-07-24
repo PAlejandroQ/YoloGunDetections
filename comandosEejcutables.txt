@@ -1,0 +1,2 @@
+python test.py --batch_size 2 --model_def config/yolov3-custom.cfg --data_config config/custom.data --weights_path WeightTest/yolov3_ckpt_99.pth --class_path data/custom/classes.names --n_cpu 2
+python deteccion_video.py --model_def config/yolov3-custom.cfg --class_path data/custom/classes.names --n_cpu 2 --weights_path WeightTest/yolov3_ckpt_99.pth
