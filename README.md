@@ -6,20 +6,23 @@ Probably we once recognized someone from afar, maybe even we only saw a very blu
 
 ## About Yolov3
 
-"You Only Look Once" is a set of arquitectures of deep learning models designed for object detection. It was first described in 2015, but we will use the 2018 Yolov3's arquitecture which is exposed in the paper "YOLOv3: An Incremental Improvement"\cite{Yolov3Paper}. Yolo was trained with COCO "Common Objects In Context", dataset which has 328 000 images of everyday objects and humans. Yolov3 can identified 80 different classes of objets, so transfer learning will be applied by adding the guns class.
+"You Only Look Once" is a set of arquitectures of deep learning models designed for object detection. It was first described in 2015, but we will use the 2018 Yolov3's arquitecture which is exposed in the paper "YOLOv3: An Incremental Improvement". Yolo was trained with COCO "Common Objects In Context", dataset which has 328 000 images of everyday objects and humans. Yolov3 can identified 80 different classes of objets, so transfer learning will be applied by adding the guns class.
 
 ### Bounding Box Prediction
 
 The network predict 4 coordinates $t_x, t_y,t_w,t_h$ for each bounding box(BB). If the cell is offset from the top left corner of the image by $(c_x, c_y)$ and the bounding box prior has width and height $p_w, p_h$, then predictions will be:
-$$
- b_x = \sigma(t_x) + c_x\\
-    b_y = \sigma(t_y) + c_y\\
-    b_w = p_we^{t_w}\\
-    b_h = p_he^{t_h}\\
-$$
-Yolov3 use sum of square error loss during training and compute gradient like the difference between a the ground truth for some coordinate prediction $\hat{t}_*$ and our prediction $t_*$. Each bounding box will have an score which will be 1 if prior BB overlaps a truth better than any others BB. In the case that it is not the best and does overlap a ground truth object by more than threshold, it score will be 0.
-This model predict 3 scales of boxes similar to a feature pyramid. It began with the base feature extractor and then add many convolutional layers. These return a bounding box, objectness and class predictions that in this case will be 1, guns's class. Then we take the feature map from 2 layers previous and upsample it by 2x. The idea is improve features using concatenation of features map from earlier layers and upsampled features. Yolov3 use this metod to get more meaningfull semantinc information with more details.\\
-After that, add convolutional layers to process this new feature map and predict a tensor similar than the last step except that this is twice as long.\\
+
+ $b_x = \sigma(t_x) + c_x$ 
+ 
+ $b_y = \sigma(t_y) + c_y$
+ 
+ $b_w = p_we^{t_w}$
+ 
+ $b_h = p_he^{t_h}$
+ 
+Yolov3 use sum of square error loss during training and compute gradient like the difference between a the ground truth for some coordinate prediction $t^*$ and our prediction $t$ . Each bounding box will have an score which will be 1 if prior BB overlaps a truth better than any others BB. In the case that it is not the best and does overlap a ground truth object by more than threshold, it score will be 0.
+This model predict 3 scales of boxes similar to a feature pyramid. It began with the base feature extractor and then add many convolutional layers. These return a bounding box, objectness and class predictions that in this case will be 1, guns's class. Then we take the feature map from 2 layers previous and upsample it by 2x. The idea is improve features using concatenation of features map from earlier layers and upsampled features. Yolov3 use this metod to get more meaningfull semantinc information with more details.
+After that, add convolutional layers to process this new feature map and predict a tensor similar than the last step except that this is twice as long.
 Finally, repeat this process for the final scale.
 
 <img src="README.assets/Darknet-53.png" alt="Darknet-53" style="zoom:50%;" />
