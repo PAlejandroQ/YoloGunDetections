@@ -67,7 +67,6 @@ In conclusion , in the present work we use the arquitecture of Yolov3 to detect 
 
 * About Synced. (2018, marzo 27). The YOLOv3 object detection network is fast! Synced | AI Technology & Industry Review. https://syncedreview.com/2018/03/27/the-yolov3-object-detection-network-is-fast/ 
 * Criollo-Leal, B. A., & Díaz-Rondón, N. (2019). Método de detección automática de armas de mano en video usando aprendizaje profundo. Facultad de Ingeniería. https://repository.ucatolica.edu.co/handle/10983/24010 
-* Cruz, H., & Miguel, J. (2019). Detección de armas de fuego utilizando redes convolucionales profundas. Universidad Nacional de San Agustín de Arequipa. http://repositorio.unsa.edu.pe/handle/UNSA/10578 
 * Kathuria, A. (2018, abril 23). What’s new in YOLO v3? Towards Data Science. https://towardsdatascience.com/yolo-v3-object-detection-53fb7d3bfe6b 
 * Redmon, J., & Farhadi, A. (2018). YOLOv3: An Incremental Improvement. arXiv [cs.CV]. https://doi.org/10.48550/ARXIV.1804.02767
 * anónimo. (2022, agosto 17). Delincuencia en Perú: cada hora se registran 11 delitos en el país, entre robos y asaltos agravados. infobae. https://www.infobae.com/america/peru/2022/03/20/delincuencia-en-peru-11-delitos-se-registran-cada-hora-en-el-pais-entre-ellos-robos-y-asaltos-agravados/
